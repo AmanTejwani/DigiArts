@@ -1,4 +1,4 @@
-import { Header , Hero , ArtCollection , Transaction} from "./components"
+import { Header , Hero , ArtCollection , Transaction , Footer , CreateModal} from "./components"
 const App = () => {
   return (
     <div className="min-h-screen">
@@ -8,6 +8,8 @@ const App = () => {
         </div>
         <ArtCollection />
         <Transaction />
+        <Footer />
+        <CreateModal />
     </div>
   )
 }

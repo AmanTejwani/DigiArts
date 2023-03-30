@@ -1,7 +1,11 @@
 import React from 'react'
 import Identicon from 'react-identicons'
+import { setGlobalState, useGlobalState, truncate } from '../store'
 
 const Hero = () => {
+  const handleCreateNFT=()=>{
+    setGlobalState('modal','scale-100')
+  }
   return (
     <div className="flex flex-col md:flex-row w-4/5 justify-between items-center mx-auto py-10">
       <div className="md:w-3/6 w-full">
@@ -16,7 +20,7 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-row mt-5">
-            <button className="shadow-xl shadow-black text-white bg-[#66ff33] hover:bg-[#00cc66] md:text-xs p-2 rounded-full cursor-pointer" >
+            <button className="shadow-xl shadow-black text-white bg-[#66ff33] hover:bg-[#00cc66] md:text-xs p-2 rounded-full cursor-pointer" onClick={handleCreateNFT}>
             Create NFT
             </button>
         </div>
