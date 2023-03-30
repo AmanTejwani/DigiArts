@@ -39,10 +39,10 @@ body {
   background-color: #151c25;
   background-image: radial-gradient(
       at 0% 100%,
-      hsl(0deg 39% 30%) 0,
+      hsl(100, 3%, 20%) 0,
       transparent 53%
     ),
-    radial-gradient(at 50% 150%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+    radial-gradient(at 50% 150%, rgb(56, 80, 66) 0, transparent 50%);
 }
 
 .text-gradient {
