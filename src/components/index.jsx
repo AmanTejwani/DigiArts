@@ -6,6 +6,10 @@ import Footer from './Footer';
 import CreateModal from './CreateModal';
 import DispalyNFT from './DispalyNFT';
 import UpdateNFT from './UpdateNFT';
+import Loading from './Loading';
+import Alert from './Alert';
+
+
 export{
     Header,
     Hero,
@@ -14,5 +18,7 @@ export{
     Footer,
     CreateModal,
     DispalyNFT,
-    UpdateNFT
+    UpdateNFT,
+    Alert,
+    Loading
 }
