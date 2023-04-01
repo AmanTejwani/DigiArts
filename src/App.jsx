@@ -1,4 +1,4 @@
-import { Header , Hero , ArtCollection , Transaction , Footer , CreateModal} from "./components"
+import { Header , Hero , ArtCollection , Transaction , Footer , CreateModal , DispalyNFT , UpdateNFT} from "./components"
 const App = () => {
   return (
     <div className="min-h-screen">
@@ -10,6 +10,9 @@ const App = () => {
         <Transaction />
         <Footer />
         <CreateModal />
+        <DispalyNFT />
+        <UpdateNFT />
+        
     </div>
   )
 }

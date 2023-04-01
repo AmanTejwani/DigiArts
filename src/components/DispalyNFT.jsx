@@ -3,8 +3,10 @@ import { FaTimes } from 'react-icons/fa'
 import { useGlobalState, setGlobalState, getGlobalState } from '../store'
 const DispalyNFT = () => {
     const [showModal] = useGlobalState('showModal')
+    const [updateModal] = useGlobalState('updateModal')
     const handleChangePrice = () => {
         setGlobalState('showModal', 'scale-0')
+        setGlobalState('updateModal', 'scale-100')
         console.log('on change price');
     }
     const handlePurchaseNFT = () => {
@@ -53,8 +55,7 @@ const DispalyNFT = () => {
                 </div>
                 <div className="flex justify-between items-center space-x-2">
                     {/* {connectedAccount == nft?.owner ? ( */}
-                    <button 
-                    className="flex flex-row justify-center items-center w-full text-white text-md bg-[#66ff33]  py-2 px-5 rounded-full   drop-shadow-xl border hover:bg-[#bd255f] hover:bg-transparent hover:text-white  focus:outline-none focus:ring mt-5" onClick={handleChangePrice}>
+                    <button className="flex flex-row justify-center items-center w-full text-white text-md bg-[#66ff33]  py-2 px-5 rounded-full   drop-shadow-xl border hover:bg-[#bd255f] hover:bg-transparent hover:text-white  focus:outline-none focus:ring mt-5" onClick={handleChangePrice}>
                         Change Price
                     </button>
                     {/* ) : ( */}

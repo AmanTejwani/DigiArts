@@ -1,4 +1,5 @@
 import React from 'react'
+import { setGlobalState , useGlobalState , getGlobalState } from '../store'
 // import imageHero from 'https://images.cointelegraph.com/images/1434_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjEtMDYvNGE4NmNmOWQtODM2Mi00YmVhLThiMzctZDEyODAxNjUxZTE1LmpwZWc=.jpg'
 const ArtCollection = () => {
   return (
@@ -23,6 +24,9 @@ const ArtCollection = () => {
 }
 
 const Card = ({ nft }) => {  
+    const handleViewDetails=()=>{
+      setGlobalState('showModal', 'scale-100')
+    }
     return (
       <div className="w-full shadow-xl shadow-black rounded-md overflow-hidden bg-gray-800 my-2 p-3">
         <img src='https://images.cointelegraph.com/images/1434_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjEtMDYvNGE4NmNmOWQtODM2Mi00YmVhLThiMzctZDEyODAxNjUxZTE1LmpwZWc=.jpg'
@@ -45,7 +49,7 @@ const Card = ({ nft }) => {
             {/* <p className="text-sm font-semibold">{nft.cost} ETH</p> */}
             <p className="text-sm font-semibold">0.25 ETH</p>
           </div>
-          <button className="shadow-lg shadow-black text-white bg-[#66ff33] hover:bg-[#00cc66] px-1.5 py-1 rounded-full cursor-pointer" >
+          <button className="shadow-lg shadow-black text-white bg-[#66ff33] hover:bg-[#00cc66] px-1.5 py-1 rounded-full cursor-pointer" onClick={handleViewDetails}>
             View Details
           </button>
         </div>
