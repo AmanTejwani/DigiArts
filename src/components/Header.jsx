@@ -1,16 +1,18 @@
-import React from 'react'
+import { connectWallet } from '../Blockchain.Services'
+import { useGlobalState, truncate } from '../store'
 import DigiArtlogo from '../assets/DigiArtlogo.png'
 
 const Header = () => {
+  const [connectedAccount] = useGlobalState('connectedAccount')
   return (
-    <nav className='w-4/5 flex md:justify-center justify-between items-center py-4 mx-auto'>
+    <nav className="w-4/5 flex md:justify-center justify-between items-center py-4 mx-auto">
       <div className="md:flex-[0.5] flex-initial justify-center items-center">
         <img
           className="w-32 cursor-pointer"
           src={DigiArtlogo}
           alt="Timeless Logo"
         />
-      </div>    
+      </div>
 
       <ul
         className="md:flex-[0.5] text-white md:flex
@@ -23,9 +25,22 @@ const Header = () => {
         <li className="mx-4 cursor-pointer">Community</li>
       </ul>
 
-      <button className="shadow-xl shadow-black text-white bg-[#66ff33] hover:bg-[#00cc66] md:text-xs p-2 rounded-full cursor-pointer" >
+      {connectedAccount ? (
+        <button
+          className="shadow-xl shadow-black text-white
+        bg-[#e32970] hover:bg-[#bd255f] md:text-xs p-2
+          rounded-full cursor-pointer"
+        >
+          {truncate(connectedAccount, 4, 4, 11)}
+        </button>
+      ) : (
+        <button
+        className="shadow-xl shadow-black text-white bg-[#66ff33] hover:bg-[#00cc66] md:text-xs p-2 rounded-full cursor-pointer"
+          onClick={connectWallet}
+        >
           Connect Wallet
-      </button>
+        </button>
+      )}
     </nav>
   )
 }
