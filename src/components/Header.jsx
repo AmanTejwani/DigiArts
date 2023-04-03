@@ -10,7 +10,7 @@ const Header = () => {
         <img
           className="w-32 cursor-pointer"
           src={DigiArtlogo}
-          alt="Timeless Logo"
+          alt="DigiArts Logo"
         />
       </div>
 

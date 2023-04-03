@@ -1,6 +1,11 @@
 import React from 'react'
 import { FaTimes } from 'react-icons/fa'
-import {useGlobalState , setGlobalState , getGlobalState} from '../store'
+import {
+  useGlobalState,
+  setGlobalState,
+  setLoadingMsg,
+  setAlert,
+} from '../store'
 import { useState } from 'react'
 
 const CreateModal = () => {
@@ -28,11 +33,14 @@ const CreateModal = () => {
      const handleSubmit=(event)=>{
       event.preventDefault()
       setGlobalState('modal', 'scale-0')
+      setGlobalState('loading', { show: true, msg: 'Uploading IPFS data...' })
+      setLoadingMsg('Intializing transaction...')
       if(!title || !description || !price)
         return;
       console.log("minitng your nft")
-
       resetForm()
+      setAlert('Minting completed...', 'green')
+      window.location.reload()
      }
 
      const resetForm = () => {

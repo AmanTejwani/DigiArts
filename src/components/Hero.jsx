@@ -1,8 +1,7 @@
 import React from 'react'
-import Identicon from 'react-identicons'
 import { setGlobalState, useGlobalState, truncate } from '../store'
-
 const Hero = () => {
+  const [connectedAccount] = useGlobalState('connectedAccount')
   const handleCreateNFT=()=>{
     setGlobalState('modal','scale-100')
   }
@@ -32,10 +31,9 @@ const Hero = () => {
         <div className="flex justify-start items-center p-3">
           <div>
             <p className="text-white font-semibold">
-              {/* {connectedAccount
+              {connectedAccount
                 ? truncate(connectedAccount, 4, 4, 11)
-                : 'Connect Your Wallet'} */}
-                0x21 ...786a
+                : 'Connect Your Wallet'}
             </p>
             <small className="text-green-800 font-bold">@you</small>
           </div>
