@@ -1,4 +1,4 @@
-import { Header , Hero , ArtCollection , Transaction , Footer , CreateModal , DispalyNFT , UpdateNFT, Loading, Alert} from "./components"
+import { Header , Hero , ArtCollection , Transactions , Footer , CreateModal , DispalyNFT , UpdateNFT, Loading, Alert} from "./components"
 import { useEffect } from 'react'
 import { getAllNFTs, isWallectConnected } from './Blockchain.Services'
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
           <Hero />
         </div>
         <ArtCollection />
-        <Transaction />
+        {/* <Transactions /> */}
         <CreateModal />
         <Footer />
         <DispalyNFT />

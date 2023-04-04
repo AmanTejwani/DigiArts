@@ -1,7 +1,7 @@
 import Header from './Header';
 import Hero from './Hero';
 import ArtCollection from './ArtCollection';
-import Transaction from './Transaction';
+import Transactions from './Transactions';
 import Footer from './Footer';
 import CreateModal from './CreateModal';
 import DispalyNFT from './DispalyNFT';
@@ -14,7 +14,7 @@ export{
     Header,
     Hero,
     ArtCollection,
-    Transaction,
+    Transactions,
     Footer,
     CreateModal,
     DispalyNFT,

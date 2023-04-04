@@ -27,15 +27,15 @@ const Header = () => {
 
       {connectedAccount ? (
         <button
-          className="shadow-xl shadow-black text-white
-        bg-[#e32970] hover:bg-[#bd255f] md:text-xs p-2
+          className="shadow-xl shadow-black text-black
+          bg-[#66ff33] hover:bg-[#00cc66] md:text-xs p-2
           rounded-full cursor-pointer"
         >
           {truncate(connectedAccount, 4, 4, 11)}
         </button>
       ) : (
         <button
-        className="shadow-xl shadow-black text-white bg-[#66ff33] hover:bg-[#00cc66] md:text-xs p-2 rounded-full cursor-pointer"
+        className="shadow-xl shadow-black text-black bg-[#66ff33] hover:bg-[#00cc66] md:text-xs p-2 rounded-full cursor-pointer"
           onClick={connectWallet}
         >
           Connect Wallet
