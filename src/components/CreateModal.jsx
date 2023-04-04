@@ -6,6 +6,7 @@ import {
   setLoadingMsg,
   setAlert,
 } from '../store'
+import { mintNFT } from '../Blockchain.Services'
 import { useState } from 'react'
 
 const CreateModal = () => {
@@ -16,10 +17,21 @@ const CreateModal = () => {
      const [url,setUrl] = useState('')
      const [imgBase64,setImgBase64] = useState(null)
 
-     const closeModal=()=>{
-        setGlobalState('modal','scale-0')
-        resetForm()
-     }
+     const changeImage = async (e) => {
+      const reader = new FileReader()
+      if (e.target.files[0]) reader.readAsDataURL(e.target.files[0])
+  
+      reader.onload = (readerEvent) => {
+        const file = readerEvent.target.result
+        setImgBase64(file)
+        setFileUrl(e.target.files[0])
+      }
+    }
+  
+    const closeModal = () => {
+      setGlobalState('modal', 'scale-0')
+      resetForm()
+    }
 
      const handleTitleChange=(event)=>{
         setTitle(event.target.value)
@@ -30,18 +42,32 @@ const CreateModal = () => {
      const handleDescriptionChange=(event)=>{
         setDescription(event.target.value)
      }
-     const handleSubmit=(event)=>{
-      event.preventDefault()
-      setGlobalState('modal', 'scale-0')
-      setGlobalState('loading', { show: true, msg: 'Uploading IPFS data...' })
+    
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    if (!title || !price || !description) return
+
+    setGlobalState('modal', 'scale-0')
+    setGlobalState('loading', { show: true, msg: 'Uploading IPFS data...' })
+
+    try {
+      const created = await client.add(fileUrl)
+      const metadataURI = `https://ipfs.io/ipfs/${created.path}`
+      const nft = { title, price, description, metadataURI }
+
       setLoadingMsg('Intializing transaction...')
-      if(!title || !description || !price)
-        return;
-      console.log("minitng your nft")
+      setFileUrl(metadataURI)
+      await mintNFT(nft)
+
       resetForm()
       setAlert('Minting completed...', 'green')
       window.location.reload()
-     }
+    } catch (error) {
+      console.log('Error uploading file: ', error)
+      setAlert('Minting failed...', 'red')
+    }
+  }
 
      const resetForm = () => {
         setTitle('')
@@ -75,7 +101,7 @@ const CreateModal = () => {
             <label className="block">
               <span className="sr-only">Choose profile photo</span>
               <input type="file" accept="image/png, image/gif, image/jpeg, image/webp" className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#19212c] file:text-gray-400 hover:file:bg-[#1d2631] cursor-pointer focus:ring-0 focus:outline-none"
-                // onChange={changeImage}
+                onChange={changeImage}
                 required />
             </label>
           </div>

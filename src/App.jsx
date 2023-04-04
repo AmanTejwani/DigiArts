@@ -1,5 +1,11 @@
 import { Header , Hero , ArtCollection , Transaction , Footer , CreateModal , DispalyNFT , UpdateNFT, Loading, Alert} from "./components"
+import { useEffect } from 'react'
+import { getAllNFTs, isWallectConnected } from './Blockchain.Services'
 const App = () => {
+  useEffect(async () => {
+    await isWallectConnected()
+    await getAllNFTs()
+  }, [])
   return (
     <div className="min-h-screen">
         <div className="gradient-bg-hero">
@@ -8,8 +14,8 @@ const App = () => {
         </div>
         <ArtCollection />
         <Transaction />
-        <Footer />
         <CreateModal />
+        <Footer />
         <DispalyNFT />
         <UpdateNFT />
         <Loading />

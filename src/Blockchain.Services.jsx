@@ -7,6 +7,7 @@ window.web3 = new Web3(ethereum)
 window.web3 = new Web3(window.web3.currentProvider)
 
 const getEtheriumContract = async () => {
+  console.log("Hii");
   const connectedAccount = getGlobalState('connectedAccount')
 
   if (connectedAccount) {
@@ -91,6 +92,7 @@ const getAllNFTs = async () => {
 
 const mintNFT = async ({ title, description, metadataURI, price }) => {
   try {
+    console.log(title);
     price = window.web3.utils.toWei(price.toString(), 'ether')
     const contract = await getEtheriumContract()
     const account = getGlobalState('connectedAccount')
