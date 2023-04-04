@@ -13,7 +13,7 @@ import { create } from 'ipfs-http-client'
 const auth =
   'Basic ' +
   Buffer.from(
-    'e414935d16695435beb5' + ':' + '03fb82baa6e3080a57952c55e86d9d9021f16a5938119d60ec6ce6684e5e5b4a',
+    '2Nwe1wpLeGaNo2HeXqDhmdMvtdj' + ':' + 'ba1285b90c3c964c7c4e8ee692a23bbd',
   ).toString('base64')
 
 const client = create({
