@@ -13,7 +13,7 @@ const App = () => {
           <Hero />
         </div>
         <ArtCollection />
-        {/* <Transactions /> */}
+        <Transactions />
         <CreateModal />
         <Footer />
         <DispalyNFT />

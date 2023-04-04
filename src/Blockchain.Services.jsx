@@ -7,7 +7,7 @@ window.web3 = new Web3(ethereum)
 window.web3 = new Web3(window.web3.currentProvider)
 
 const getEtheriumContract = async () => {
-  console.log("Hii");
+  // console.log("Hii");
   const connectedAccount = getGlobalState('connectedAccount')
 
   if (connectedAccount) {
@@ -88,7 +88,7 @@ const getAllNFTs = async () => {
   } catch (error) {
     reportError(error)
   }
-}
+} 
 
 const mintNFT = async ({ title, description, metadataURI, price }) => {
   try {
