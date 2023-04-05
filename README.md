@@ -1,2 +1,2 @@
 # DigiArts
-Digital Assests (NFTS) Marketplace 
+Digital Assests (NFT's) Marketplace 
