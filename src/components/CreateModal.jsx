@@ -9,17 +9,17 @@ import {
 import { mintNFT } from '../Blockchain.Services'
 import { useState } from 'react'
 import { create } from 'ipfs-http-client'
-// require('dotenv').config();
+require('dotenv').config();
 
 const auth =
   'Basic ' +
   Buffer.from(
-    '2Nwe1wpLeGaNo2HeXqDhmdMvtdj' + ':' + 'ba1285b90c3c964c7c4e8ee692a23bbd',
+    process.env.PROJECT_ID + ':' + process.env.API_KEY_SECRET,
   ).toString('base64')
 
 const client = create({
-  host: 'ipfs.infura.io',
-  port: 5001,
+  host: process.env.HOST,
+  port: process.env.PORT,
   protocol: 'https',
   headers: {
     authorization: auth,
