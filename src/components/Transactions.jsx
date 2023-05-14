@@ -28,17 +28,17 @@ const Transactions = () => {
           {collection.map((tx) => (
             <div
               key={tx.id}
-              className="flex justify-between items-center border border-pink-500 text-gray-400 w-full shadow-xl shadow-black rounded-md overflow-hidden bg-gray-800 my-2 p-3"
+              className="flex justify-between items-center border border-green-500 text-gray-400 w-full shadow-xl shadow-black rounded-md overflow-hidden bg-gray-800 my-2 p-3"
             >
-              <div className="rounded-md shadow-sm shadow-pink-500 p-2">
+              {/* <div className="rounded-md shadow-sm shadow-pink-500 p-2">
                 <BiTransfer />
-              </div>
+              </div> */}
 
               <div>
                 <h4 className="text-sm">{tx.title} Transfered</h4>
                 <small className="flex flex-row justify-start items-center">
                   <span className="mr-1">Received by</span>
-                  <a href="#" className="text-pink-500 mr-2">
+                  <a href="#" className="text-green-500 mr-2">
                     {truncate(tx.owner, 4, 4, 11)}
                   </a>
                   <a href="#">

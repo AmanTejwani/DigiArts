@@ -27,7 +27,7 @@ const Hero = () => {
       </div>
 
       <div className="shadow-xl shadow-black md:w-2/5 w-full mt-10 md:mt-0 rounded-md overflow-hidden bg-gray-800">
-        <img src="https://images.cointelegraph.com/images/1434_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjEtMDYvNGE4NmNmOWQtODM2Mi00YmVhLThiMzctZDEyODAxNjUxZTE1LmpwZWc=.jpg" alt="NFT DigiArt" className="h-60 w-full object-cover" />
+        <img src="https://d3lkc3n5th01x7.cloudfront.net/wp-content/uploads/2022/01/04221403/metaverse-virtual-world-1.png" alt="NFT DigiArt" className="h-60 w-full object-cover" />
         <div className="flex justify-start items-center p-3">
           <div>
             <p className="text-white font-semibold">
